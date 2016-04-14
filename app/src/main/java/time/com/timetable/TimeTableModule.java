@@ -110,20 +110,20 @@ public class TimeTableModule extends Activity {
                 String mStartTime = StartTime.getText().toString();
                 String mFinishTime = FinishTime.getText().toString();
 
-                if (!mCode.matches("^[A-Za-z0-9]{5}$")) {
+                if (!mCode.matches("^[A-Za-z]{2}[0-9]{5}$")) {
 
                     Toast.makeText(getBaseContext(), "Please try 2 Letters and 3 Numbers", Toast.LENGTH_LONG).show();
 
 
                 } else if (!mStartTime.matches(TIME09T018HOURS_PATTERN)) {
 
-                    Toast.makeText(getBaseContext(), "Invalid StartTime Must be 9 AM To 5 PM", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Invalid StartTime Must be 9 AM To 6 PM", Toast.LENGTH_LONG).show();
 
 
                 } else if (!mFinishTime.matches(TIME09T018HOURS_PATTERN)) {
 
 
-                    Toast.makeText(getBaseContext(), "Invalid StartTime Must be 9 AM To 5 PM", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Invalid Finish Time Must be 9 AM To 6 PM", Toast.LENGTH_LONG).show();
 
 
                 } else {
@@ -151,7 +151,6 @@ public class TimeTableModule extends Activity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
 
                 }
             }

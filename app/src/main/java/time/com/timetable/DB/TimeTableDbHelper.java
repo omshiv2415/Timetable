@@ -56,13 +56,7 @@ public class TimeTableDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void deleteTimetable(String module_code, SQLiteDatabase sqLiteDatabase) {
 
-        String selection = TimeTableDataBase.NewTimeTable.MODULE_CODE + " LIKE?";
-        String[] selection_args = {module_code};
-        sqLiteDatabase.delete(TimeTableDataBase.NewTimeTable.TABLE_NAME, selection, selection_args);
-
-    }
 
     public void deleteRowFromTimeTable(String id) {
         SQLiteDatabase db = this.getWritableDatabase();

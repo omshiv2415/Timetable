@@ -13,7 +13,7 @@ import java.util.List;
 import time.com.timetable.R;
 
 /**
- * Created by VIRALKUMAR on 09/04/2016.
+ * Created by VIRALKUMAR on 09/04/2016. omshiv
  */
 public class ListDataAdapter extends ArrayAdapter {
     List list = new ArrayList();
