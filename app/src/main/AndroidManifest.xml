@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="time.com.timetable" >
-
+    package="time.com.timetable">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/shop"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MyActivity"
-            android:label="@string/app_name" >
+            android:name=".DataListActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,17 +17,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_time_table_module" />
+        <activity
             android:name=".TimeTableModule"
-            android:label="@string/title_activity_time_table_module" >
-        </activity>
-        <activity
-            android:name=".DataListActivity"
-            android:label="@string/title_activity_data_list" >
-        </activity>
-        <activity
-            android:name=".MyActivity2"
-            android:label="@string/title_activity_my_activity2" >
-        </activity>
+            android:label="@string/title_activity_data_list" />
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MyActivity"></activity>
     </application>
 
 </manifest>

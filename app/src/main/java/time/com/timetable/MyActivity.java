@@ -6,19 +6,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.kinvey.android.Client;
+
 
 public class MyActivity extends Activity {
+
 
     private Button AddTimeTable;
     private Button VieTimeTable;
     private Button DeleteTimeTable;
-
+    public Client mKinveyClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-
+        mKinveyClient = new Client.Builder("kid_HkLFlSK7e", "51f28035747f4e1dbdd4da5131367cb4"
+                , this.getApplicationContext()).build();
         AddTimeTable = (Button) findViewById(R.id.btnAdd);
         VieTimeTable = (Button) findViewById(R.id.btnViewTimeTable);
 
@@ -52,4 +56,9 @@ public class MyActivity extends Activity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mKinveyClient.user().logout().execute();
+    }
 }

@@ -50,4 +50,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/editTextFinishTime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/editTextDate"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="12-12-2016" />
+
 </RelativeLayout>

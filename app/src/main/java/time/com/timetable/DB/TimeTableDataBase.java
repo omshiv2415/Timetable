@@ -10,7 +10,9 @@ public class TimeTableDataBase {
         public static final String MODULE_CODE = "module_code";
         public static final String START_TIME = "start_time";
         public static final String FINISH_TIME = "finish_time";
+        public static final String SHIFT_DATE = "shift_date";
         public static final String TABLE_NAME = "time_table";
+
 
 
     }

@@ -27,7 +27,7 @@ public class ListDataAdapter extends ArrayAdapter {
 
     static class LayoutHandler {
 
-        TextView MCODE, STIME, FTIME;
+        TextView MCODE, STIME, FTIME, SDATE;
 
     }
 
@@ -59,6 +59,7 @@ public class ListDataAdapter extends ArrayAdapter {
             layoutHandler.MCODE = (TextView) row.findViewById(R.id.textModuleCode);
             layoutHandler.STIME = (TextView) row.findViewById(R.id.textStartTime);
             layoutHandler.FTIME = (TextView) row.findViewById(R.id.textFinishTime);
+            layoutHandler.SDATE = (TextView) row.findViewById(R.id.textViewShiftDate);
 
             row.setTag(layoutHandler);
 
@@ -72,6 +73,7 @@ public class ListDataAdapter extends ArrayAdapter {
         layoutHandler.MCODE.setText(dataProvider.getMcode());
         layoutHandler.STIME.setText(dataProvider.getMstartTime());
         layoutHandler.FTIME.setText(dataProvider.getMfinishTime());
+        layoutHandler.SDATE.setText(dataProvider.getmDate());
 
 
         return row;

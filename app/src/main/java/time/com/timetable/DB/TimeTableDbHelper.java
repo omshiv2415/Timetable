@@ -14,7 +14,8 @@ public class TimeTableDbHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_QUERY =
             "CREATE TABLE " + TimeTableDataBase.NewTimeTable.TABLE_NAME + "(" + TimeTableDataBase.NewTimeTable.MODULE_CODE + " TEXT, " +
-                    TimeTableDataBase.NewTimeTable.START_TIME + " TEXT, " + TimeTableDataBase.NewTimeTable.FINISH_TIME + " TEXT);";
+                    TimeTableDataBase.NewTimeTable.START_TIME + " TEXT, " + TimeTableDataBase.NewTimeTable.FINISH_TIME + " TEXT, "
+                    + TimeTableDataBase.NewTimeTable.SHIFT_DATE + " TEXT);";
     private static final String DATABASE_NAME = "TIMETABLE.DB";
     private static final int VERSION = 1;
     SQLiteDatabase db;
@@ -32,13 +33,15 @@ public class TimeTableDbHelper extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "Table created / opened..");
     }
 
-    public void addTimeTableDetail(String modulecode, String starttime, String finishtime, SQLiteDatabase db) {
+    public void addTimeTableDetail(String modulecode, String starttime, String finishtime, String shiftdate , SQLiteDatabase db) {
 
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(TimeTableDataBase.NewTimeTable.MODULE_CODE, modulecode);
         contentValues.put(TimeTableDataBase.NewTimeTable.START_TIME, starttime);
         contentValues.put(TimeTableDataBase.NewTimeTable.FINISH_TIME, finishtime);
+        contentValues.put(TimeTableDataBase.NewTimeTable.SHIFT_DATE, shiftdate);
+
         db.insert(TimeTableDataBase.NewTimeTable.TABLE_NAME, null, contentValues);
         Log.e("DATABASE OPERATIONS", "Data inserted in one raw / opened..");
 
@@ -50,7 +53,7 @@ public class TimeTableDbHelper extends SQLiteOpenHelper {
         Cursor cursor;
 
         String[] projections = {TimeTableDataBase.NewTimeTable.MODULE_CODE, TimeTableDataBase.NewTimeTable.START_TIME,
-                TimeTableDataBase.NewTimeTable.FINISH_TIME,};
+                TimeTableDataBase.NewTimeTable.FINISH_TIME, TimeTableDataBase.NewTimeTable.SHIFT_DATE};
         cursor = db.query(TimeTableDataBase.NewTimeTable.TABLE_NAME, projections, null, null, null, null, null);
         return cursor;
     }
